@@ -1,0 +1,27 @@
+version: '2.4'
+services:
+  contacts-api:
+    ports:
+      - 3331:3331
+    cpu_count: 2
+    cpus: '0.25'
+    mem_limit: 2048MB
+    container_name: 'contacts-api-dev'
+
+  # mysql-contacts:
+  #   image: 'mysql:latest'
+  #   restart: 'always'
+  #   expose:
+  #     - '3301'
+  #   ports:
+  #     - '3301:3306'
+  #   cpu_count: 2
+  #   cpus: '0.25'
+  #   mem_limit: 1024M
+  #   container_name: 'contacts-mysql-dev'
+  #   environment:
+  #       MYSQL_ROOT_PASSWORD: 'Xh@z#1*C39HR'
+  #       MYSQL_DATABASE: 'core'
+  #       MYSQL_USER: 'admin'
+  #       MYSQL_PASSWORD: 'F8g#x#p0ngxF'
+    

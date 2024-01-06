@@ -1,0 +1,10 @@
+version: '2.4'
+services:
+  contacts-api:
+    build: .
+    restart: 'always'
+
+  # mysql-contacts:
+  #   image: 'mysql:latest'
+  #   restart: 'always'
+    

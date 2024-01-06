@@ -1,0 +1,184 @@
+define({ "api": [
+  {
+    "type": "post",
+    "url": "/contacts",
+    "title": "Create a new contact",
+    "name": "Create_contact",
+    "group": "Contact",
+    "parameter": {
+      "fields": {
+        "Request body": [
+          {
+            "group": "Request body",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Contact name</p>"
+          },
+          {
+            "group": "Request body",
+            "type": "Sting",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>Contact phone number</p>"
+          },
+          {
+            "group": "Request body",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>Contact date</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  error: false,\n  result: {\n     \"name\": \"John\",\n     \"phone\": \"+37411111111\",\n     \"date\": \"11/24/2020\"\n     }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "/Users/cybereternal/Documents/GitHub/contacts-api/src/app/contacts/controllers/create.js",
+    "groupTitle": "Contact"
+  },
+  {
+    "type": "delete",
+    "url": "/contacts:id",
+    "title": "Delete a contact",
+    "name": "Delete_contact",
+    "group": "Contact",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Contact's unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  error: false,\n  result: 'Successfully deleted'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "/Users/cybereternal/Documents/GitHub/contacts-api/src/app/contacts/controllers/delete.js",
+    "groupTitle": "Contact"
+  },
+  {
+    "type": "get",
+    "url": "/contacts",
+    "title": "Get contacts list",
+    "name": "Get_contacts",
+    "group": "Contact",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>COntact's unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  error: false,\n  result: [\n     {\n       \"name\": \"test\"\n       \"phone\": \"+241241414\"\n       \"date\": \"11/24/2020\"\n     }\n   ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "/Users/cybereternal/Documents/GitHub/contacts-api/src/app/contacts/controllers/get.js",
+    "groupTitle": "Contact"
+  },
+  {
+    "type": "post",
+    "url": "/form-fields",
+    "title": "Add a new form field",
+    "name": "Create_a_new_form_field",
+    "group": "Form",
+    "parameter": {
+      "fields": {
+        "Request body": [
+          {
+            "group": "Request body",
+            "type": "String",
+            "optional": false,
+            "field": "label",
+            "description": "<p>Label</p>"
+          },
+          {
+            "group": "Request body",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Request body",
+            "type": "Sting",
+            "optional": false,
+            "field": "type",
+            "description": "<p>Input type</p>"
+          },
+          {
+            "group": "Request body",
+            "type": "Boolean",
+            "optional": false,
+            "field": "required",
+            "description": "<p>Is required field</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  error: false,\n  result: {\n     id: 999,\n     \"label\": \"Test\",\n     \"name\": \"test\",\n     \"type\": \"text\",\n     \"required\": false,\n      \"errorMessage\": \"Not valid\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "/Users/cybereternal/Documents/GitHub/contacts-api/src/app/form-fields/controllers/create.js",
+    "groupTitle": "Form"
+  },
+  {
+    "type": "get",
+    "url": "/form-fields",
+    "title": "Get fields list",
+    "name": "Get_form_fields",
+    "group": "Form",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  error: false,\n  result: [\n     {\n     id: 999,\n     \"label\": \"Test\",\n     \"name\": \"test\",\n     \" type\": \"text\",\n     \"required\": false,\n      \"errorMessage\": \"Not valid\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "/Users/cybereternal/Documents/GitHub/contacts-api/src/app/form-fields/controllers/get.js",
+    "groupTitle": "Form"
+  }
+] });
